@@ -50,6 +50,7 @@ cinergroup              - showtv.com.tr      Yes   No
                         - bloomberght.com
 cnews                   cnews.fr             Yes   Yes
 crunchyroll             crunchyroll.com      --    Yes
+cubetv                  cubetv.sg            Yes   --
 cybergame               cybergame.tv         Yes   Yes
 dailymotion             dailymotion.com      Yes   Yes
 delfi                   - delfi.lt           --    Yes
@@ -120,7 +121,7 @@ npo                     - npo.nl             Yes   Yes   Streams may be geo-rest
                         - zappelin.nl
 nrk                     - tv.nrk.no          Yes   Yes   Streams may be geo-restricted to Norway.
                         - radio.nrk.no
-ok_live                 ok.ru                Yes   --
+ok_live                 ok.ru                Yes   Yes
 olympicchannel          olympicchannel.com   Yes   Yes   Only non-premium content is available.
 onetv                   - 1tv.ru             Yes   Yes   Streams may be geo-restricted to Russia. VOD only for 1tv.ru
                         - ctc.ru
