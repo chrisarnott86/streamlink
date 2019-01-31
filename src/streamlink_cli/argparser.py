@@ -490,7 +490,7 @@ def build_parser():
         "-f", "--force",
         action="store_true",
         help="""
-        When using -o, always write to file even if it already exists.
+        When using -o or -r, always write to file even if it already exists.
         """
     )
     output.add_argument(
@@ -498,6 +498,24 @@ def build_parser():
         action="store_true",
         help="""
         Write stream data to stdout instead of playing it.
+        """
+    )
+    output.add_argument(
+        "-r", "--record",
+        metavar="FILENAME",
+        help="""
+        Open the stream in the player, while at the same time writing it to FILENAME.
+
+        You will be prompted if the file already exists.
+        """
+    )
+    output.add_argument(
+        "-R", "--record-and-pipe",
+        metavar="FILENAME",
+        help="""
+        Write stream data to stdout, while at the same time writing it to FILENAME.
+
+        You will be prompted if the file already exists.
         """
     )
 
@@ -742,6 +760,19 @@ def build_parser():
         """
     )
     transport.add_argument(
+        "--hls-segment-key-uri",
+        metavar="URI",
+        type=str,
+        help="""
+        URI to segment encryption key. If no URI is specified, the URI contained
+        in the segments will be used.
+
+        Example: --hls-segment-key-uri "https://example.com/hls/encryption_key"
+
+        Default is None.
+        """
+    )
+    transport.add_argument(
         "--hls-audio-select",
         type=comma_list,
         metavar="CODE",
@@ -842,7 +873,7 @@ def build_parser():
         """
     )
     transport.add_argument(
-        "--rtmp-rtmpdump", "--rtmpdump", "-r",
+        "--rtmp-rtmpdump", "--rtmpdump",
         metavar="FILENAME",
         help="""
         RTMPDump is used to access RTMP streams. You can specify the
